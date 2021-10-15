@@ -108,7 +108,6 @@ const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function(entries) {
   const [entry] = entries;
-  console.log(entry);
 
   if(!entry.isIntersecting)
     nav.classList.add('sticky');
@@ -142,7 +141,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function(section) {
   sectionObserver.observe(section);
-  //section.classList.add('section--hidden');
+  section.classList.add('section--hidden');
 });
 
 // Lazy loading images (better for performance)
@@ -150,7 +149,6 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function(entries, observer) {
   const [entry] = entries;
-  console.log(entry);
 
   if(!entry.isIntersecting) return;
 
